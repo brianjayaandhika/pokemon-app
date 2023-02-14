@@ -1,38 +1,209 @@
-.App {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.body-bg {
+  background-color: #212529 !important;
+  height: 100vh;
+}
+
+.pokemon-text {
+  color: white;
+  font-size: 18px !important;
+  padding: 12px;
+  padding-bottom: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pokemon-name {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pokemon-img {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  top: 25px;
+  border-radius: 50%;
+
+  box-shadow: inset 0px -25px 25px -10px rgba(255, 255, 255, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-group {
   display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 24px;
+}
+
+.btn-item {
+  width: 100px;
+  padding: 6px 12px 6px 12px;
+  text-align: start;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: scale 0.1s, box-shadow 0.1s ease-in;
+}
+
+.btn-item:hover {
+  scale: 1.1;
+  box-shadow: 1px 4px 8px 1px white;
+}
+
+/* Field Backgrounds */
+.encounter-field {
+  display: flex;
+  height: 250px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.field-bug {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/grass.png");
+}
+.field-dark {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ghost.png");
+}
+.field-dragon {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/dragon.png");
+}
+.field-electric {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/electric.png");
+}
+.field-fairy {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/fairy.png");
+}
+.field-fighting {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ground.png");
+}
+.field-fire {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/fire.png");
+}
+.field-flying {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/electric.png");
+}
+.field-ghost {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ghost.png");
+}
+.field-grass {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/grass.png");
+}
+.field-ground {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ground.png");
+}
+.field-ice {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ice.png");
+}
+.field-normal {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/grass.png");
+}
+.field-poison {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ghost.png");
+}
+.field-psychic {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/fairy.png");
+}
+.field-rock {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ground.png");
+}
+.field-steel {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/ground.png");
+}
+.field-water {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./images/water.png");
+}
+/* Pokemon Types*/
+.pokemon-types {
   color: white;
-}
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 
-.App-link {
-  color: #61dafb;
+  border-radius: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokemon-each-type {
+  width: 100px;
+  border: 1px solid red;
+  text-align: center;
+  border-radius: 20px;
+  padding: 24px;
+}
+.btn-type {
+  width: fit-content;
+  border: 1px solid white;
+  text-align: center;
+  padding: 2px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.bug {
+  background-color: #919e13;
+}
+.dark {
+  background-color: #5a4638;
+}
+.dragon {
+  background-color: #725cda;
+}
+.electric {
+  background-color: #fabf25;
+}
+.fairy {
+  background-color: #f3b6f3;
+}
+.fighting {
+  background-color: #77331e;
+}
+.fire {
+  background-color: #ec3f0f;
+}
+.flying {
+  background-color: #95a8f3;
+}
+.ghost {
+  background-color: #5e5faf;
+}
+.grass {
+  background-color: #7ac63e;
+}
+.ground {
+  background-color: #d6bb6e;
+}
+.ice {
+  background-color: #89ddf9;
+}
+.normal {
+  background-color: #c5c0b6;
+}
+.poison {
+  background-color: #914493;
+}
+.psychic {
+  background-color: #ee4881;
+}
+.rock {
+  background-color: #ad984e;
+}
+.steel {
+  background-color: #a1a1b3;
+}
+.water {
+  background-color: #106cc6;
 }
